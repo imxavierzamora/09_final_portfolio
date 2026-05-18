@@ -1,80 +1,238 @@
-/* homemade-apple-regular - latin */
 @font-face {
-  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-display: swap;
   font-family: 'Homemade Apple';
   font-style: normal;
   font-weight: 400;
-  src: url('../fonts/homemade-apple-v24-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url('../fonts/HomemadeApple-Regular.ttf') format('truetype');
 }
 
-/* playfair-display-regular - latin */
 @font-face {
-  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-display: swap;
   font-family: 'Playfair Display';
   font-style: normal;
   font-weight: 400;
-  src: url('../fonts/playfair-display-v40-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url('../fonts/playfair-display-v40-latin-regular.woff2') format('woff2');
 }
 
-/* gravitas-one-regular - latin */
 @font-face {
-  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-display: swap;
+  font-family: 'Playfair Display';
+  font-style: normal;
+  font-weight: 700;
+  src: url('../fonts/playfair-display-v40-latin-700.woff2') format('woff2');
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'Playfair Display';
+  font-style: normal;
+  font-weight: 800;
+  src: url('../fonts/playfair-display-v40-latin-800.woff2') format('woff2');
+}
+
+@font-face {
+  font-display: swap;
   font-family: 'Gravitas One';
   font-style: normal;
   font-weight: 400;
-  src: url('../fonts/gravitas-one-v21-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url('../fonts/gravitas-one-v21-latin-regular.woff2') format('woff2');
 }
 
-/* dm-mono-regular - latin */
 @font-face {
-  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-display: swap;
   font-family: 'DM Mono';
   font-style: normal;
   font-weight: 400;
-  src: url('../fonts/dm-mono-v16-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url('../fonts/DMMono-Regular.ttf') format('truetype');
 }
 
-/* cormorant-garamond-300 - latin */
 @font-face {
-  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-  font-family: 'Cormorant Garamond';
-  font-style: normal;
-  font-weight: 300;
-  src: url('../fonts/cormorant-garamond-v21-latin-300.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  font-display: swap;
+  font-family: 'DM Mono';
+  font-style: italic;
+  font-weight: 400;
+  src: url('../fonts/DMMono-Italic.ttf') format('truetype');
 }
-/* cormorant-garamond-regular - latin */
+
 @font-face {
-  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-display: swap;
   font-family: 'Cormorant Garamond';
   font-style: normal;
   font-weight: 400;
-  src: url('../fonts/cormorant-garamond-v21-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
-}
-/* cormorant-garamond-500 - latin */
-@font-face {
-  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-  font-family: 'Cormorant Garamond';
-  font-style: normal;
-  font-weight: 500;
-  src: url('../fonts/cormorant-garamond-v21-latin-500.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
-}
-/* cormorant-garamond-600 - latin */
-@font-face {
-  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-  font-family: 'Cormorant Garamond';
-  font-style: normal;
-  font-weight: 600;
-  src: url('../fonts/cormorant-garamond-v21-latin-600.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
-}
-/* cormorant-garamond-700 - latin */
-@font-face {
-  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-  font-family: 'Cormorant Garamond';
-  font-style: normal;
-  font-weight: 700;
-  src: url('../fonts/cormorant-garamond-v21-latin-700.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url('../fonts/CormorantGaramond-VariableFont_wght.ttf') format('truetype');
 }
 
-html,body{
-    font-family: 'cormorant-garamond-regular', serif;
+@font-face {
+  font-display: swap;
+  font-family: 'Cormorant Garamond';
+  font-style: italic;
+  font-weight: 400;
+  src: url('../fonts/CormorantGaramond-Italic-VariableFont_wght.ttf') format('truetype');
+}
+
+/* ─── Base ─────────────────────────────────── */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background-color: #f6f2ea;
+  font-family: 'DM Mono', monospace;
+}
+
+/* ─── Landing desk layout ───────────────────── */
+
+.desk {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background-image: url('../assets/scratched_desktop.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.name-block {
+  position: absolute;
+  top: 7%;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  white-space: nowrap;
+  z-index: 1;
+}
+
+.name-block h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.2rem, 5.5vw, 4.8rem);
+  font-weight: 700;
+  color: #1c1c1c;
+  margin: 0;
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+
+.name-block .subtitle {
+  font-family: 'DM Mono', monospace;
+  font-size: clamp(0.6rem, 1.1vw, 0.8rem);
+  color: #888;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin: 0.5rem 0 0;
+}
+
+.name-block .hey {
+  font-family: 'Homemade Apple', cursive;
+  font-size: clamp(0.85rem, 1.6vw, 1.2rem);
+  color: #3a3a3a;
+  margin: 0.9rem 0 0;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+}
+
+/* ─── Name tag ──────────────────────────────── */
+
+.name-tag {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: clamp(245px, 28vw, 385px);
+  height: auto;
+  z-index: 2;
+}
+
+/* ─── Scattered items ───────────────────────── */
+
+.item {
+  position: absolute;
+  text-align: center;
+  text-decoration: none;
+  display: block;
+}
+
+.item img {
+  width: clamp(180px, 20vw, 280px);
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  transition: transform 0.22s ease, filter 0.22s ease;
+}
+
+.item:hover img {
+  transform: scale(1.08);
+  filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.2));
+}
+
+.item .label {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.65rem;
+  color: #777;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-top: 0.55rem;
+  transition: color 0.2s ease;
+}
+
+.item:hover .label {
+  color: #1c1c1c;
+}
+
+/* Positions & rotations set dynamically by JS on each load */
+
+/* Stacking order for overlapping icons */
+.item-video  { z-index: 4; }  /* film reel — always on top */
+.item-ae     { z-index: 3; }  /* AE logo — second */
+.item-camera { z-index: 2; }
+.item-notepad{ z-index: 2; }
+
+/* ─── Photo gallery page ────────────────────── */
+
+.gallery-page {
+  background-color: #f6f2ea;
+}
+
+.gallery-header {
+  padding: 2rem 2rem 1rem;
+  border-bottom: 1px solid #ddd;
+  display: flex;
+  align-items: baseline;
+  gap: 2rem;
+}
+
+.gallery-header h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1c1c1c;
+  margin: 0;
+}
+
+.back-link {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #888;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.back-link:hover {
+  color: #1c1c1c;
+}
+
+.gallery-grid img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  display: block;
+  transition: opacity 0.2s ease;
+}
+
+.gallery-grid img:hover {
+  opacity: 0.88;
 }

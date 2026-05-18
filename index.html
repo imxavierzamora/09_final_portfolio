@@ -1,31 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+  <title>Xavier Zamora</title>
 </head>
 <body>
-        <header class="d-flex flex-column align-items-center justify-content-center vh-100">
-            <h1 class="mb-0">Xavier Zamora</h1>
-            <p class="fs-6">Personal Portfolio</p>
-        </header>
 
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-12 col-sm-6">
-                <div class="card">
-                    <img src="..." class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+  <div class="desk">
+
+    <img src="assets/Name%20tag.png" alt="Xavier Zamora" class="name-tag">
+
+<a href="photos.html" class="item item-camera">
+      <img src="assets/Point_and_shoot.png" alt="Photo Portfolio">
+      <p class="label">Photography</p>
+    </a>
+
+    <a href="https://www.youtube.com/watch?v=OsOc6IO_bcU" target="_blank" rel="noopener" class="item item-video">
+      <img src="assets/film.png" alt="Video">
+      <p class="label">Video</p>
+    </a>
+
+    <a href="https://richmondconfidential.org/2025/12/05/california-uber-and-lyft-drivers-can-unionize-under-new-law-but-will-that-lead-to-better-wages/" target="_blank" rel="noopener" class="item item-notepad">
+      <img src="assets/notepad.png" alt="Written Story">
+      <p class="label">Writing</p>
+    </a>
+
+    <a href="https://www.youtube.com/watch?v=JW4Wo-OowY8" target="_blank" rel="noopener" class="item item-ae">
+      <img src="assets/AE%20logo.png" alt="Motion Graphics">
+      <p class="label">Motion Graphics</p>
+    </a>
+
+  </div>
+
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script>
+    window.addEventListener('load', () => {
+      const items   = Array.from(document.querySelectorAll('.item'));
+      const nameTag = document.querySelector('.name-tag');
+      const vw = window.innerWidth;
+      const vh = window.innerHeight;
+      const pad = 24;
+      const nameTagMargin  = 24;  // clear buffer around name tag
+      const iconOverlapMax = 60;  // icons may overlap by up to this many px
+
+      function overlaps(a, b, margin) {
+        return !(a.x + a.w + margin < b.x ||
+                 b.x + b.w + margin < a.x ||
+                 a.y + a.h + margin < b.y ||
+                 b.y + b.h + margin < a.y);
+      }
+
+      // randomize name tag angle, then read its on-screen rect for collision
+      const ntDeg = (Math.random() * 14 - 7).toFixed(2);
+      nameTag.style.transform = `translate(-50%, -50%) rotate(${ntDeg}deg)`;
+      const nt = nameTag.getBoundingClientRect();
+      const blocked = [
+        { x: nt.left, y: nt.top, w: nt.width, h: nt.height },
+        { x: vw * 0.72, y: 0, w: vw * 0.28, h: vh * 0.85 }  // laptop top-right
+      ];
+      const placed  = [];
+
+      items.forEach(item => {
+        const w = item.offsetWidth  || 240;
+        const h = item.offsetHeight || 280;
+        let x, y, ok, tries = 0;
+
+        do {
+          x = pad + Math.random() * (vw - w - pad * 2);
+          y = pad + Math.random() * (vh - h - pad * 2);
+          const r = { x, y, w, h };
+          const clearOfNameTag = blocked.every(b => !overlaps(r, b, nameTagMargin));
+          const clearOfIcons   = placed.every(p  => !overlaps(r, p, -iconOverlapMax));
+          ok = clearOfNameTag && clearOfIcons;
+          tries++;
+        } while (!ok && tries < 300);
+
+        const deg = (Math.random() * 16 - 8).toFixed(2);
+        item.style.left      = x + 'px';
+        item.style.top       = y + 'px';
+        item.style.transform = `rotate(${deg}deg)`;
+        placed.push({ x, y, w, h });
+      });
+    });
+  </script>
 </body>
 </html>
